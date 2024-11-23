@@ -1,5 +1,6 @@
 "use client"
 
+import Modal from "@/components/Modal"
 import { useEffect, useState } from "react"
 
 export default function ModalProvider() {
@@ -15,7 +16,14 @@ export default function ModalProvider() {
 
   return (
     <>
-        Modals
+        <Modal
+        title="Test Modal"
+        description="Test Desc"
+        isOpen
+        onChange={()=>{}}
+        >
+          Test Children
+        </Modal>
     </>
   )
 }
