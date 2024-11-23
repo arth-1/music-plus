@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import SupabaseProvider from "@/providers/SupabaseProviders";
+import UserProvider from "@/providers/userProvider";
+import ModalProvider from "@/providers/ModalProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,9 +33,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SupabaseProvider>
+          <UserProvider>
+            <ModalProvider />
           <Sidebar>
           {children}
           </Sidebar>
+          </UserProvider>
         </SupabaseProvider>
       </body>
     </html>

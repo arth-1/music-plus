@@ -1,11 +1,21 @@
 "use client"
 
-const ModalProvider=()=>{
-    return(
-        <>
-        Modals
-        </>
-    );
-}
+import { useEffect, useState } from "react"
 
-export default ModalProvider;
+export default function ModalProvider() {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) {
+    return null
+  }
+
+  return (
+    <>
+        Modals
+    </>
+  )
+}
